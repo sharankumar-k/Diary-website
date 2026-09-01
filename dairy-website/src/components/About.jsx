@@ -1,0 +1,6 @@
+﻿import { farmImage } from '../data/dairyData'
+
+function About() {
+  return <section className="about section" id="about"><div className="container split"><div className="about-photo"><img src={farmImage} alt="PureDairy's green farm and dairy source" onError={(event) => { event.currentTarget.style.display = 'none' }}/><div className="experience-card"><strong>20+</strong><span>Years of<br/>trust</span></div></div><div className="about-copy"><span className="kicker">About PureDairy</span><h2>Good dairy begins with good care.</h2><p>For more than two decades, PureDairy has brought farm-fresh goodness to households with a simple promise: quality you can feel confident serving every day.</p><p>We partner with caring farmers, use thoughtful processes, and keep freshness at the heart of everything we do.</p><div className="stats"><div><strong>20+</strong><span>Years of Trust</span></div><div><strong>10,000+</strong><span>Happy Customers</span></div><div><strong>100%</strong><span>Quality Tested</span></div></div></div></div></section>
+}
+export default About

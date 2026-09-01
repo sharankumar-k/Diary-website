@@ -1,0 +1,6 @@
+﻿import { farmImage, milkImage } from '../data/dairyData'
+
+function Hero() {
+  return <section className="hero"><div className="hero-image" style={{ backgroundImage: `url(${farmImage})` }} role="img" aria-label="Lush green dairy farm at sunrise"/><div className="hero-wash"/><div className="hero-content container"><div className="hero-copy"><div className="eyebrow"><span/>Premium Farm Fresh</div><h1>Pure Goodness. <em>Fresh Every Day.</em></h1><p>Fresh, nutritious dairy products made with quality ingredients and delivered with care.</p><div className="hero-cta"><a className="primary-button" href="#products">Explore Products <span aria-hidden="true">→</span></a><a className="secondary-button" href="#contact">Contact Us</a></div></div><aside className="product-card"><div className="card-glow"/><div className="product-panel"><img src={milkImage} alt="Fresh milk bottle, creamy yogurt and green leaves" onError={(event) => { event.currentTarget.style.display = 'none' }}/><div className="product-meta"><div><h2>Farm Fresh Milk</h2><p>Delivered daily</p></div><span className="delivery-icon"><svg viewBox="0 0 24 24" aria-label="Delivery truck" role="img"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7zM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/></svg></span></div></div></aside></div></section>
+}
+export default Hero
