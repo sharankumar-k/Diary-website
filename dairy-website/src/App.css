@@ -1301,3 +1301,25 @@ stroke-width: 1.7;
 stroke-linecap: round;
 stroke-linejoin: round;
 }
+
+.header-actions > button:not(.menu-button) {
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-actions > button:not(.menu-button):hover {
+  background: var(--primary);
+  color: white;
+}
+
+.header-actions > button:not(.menu-button):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
