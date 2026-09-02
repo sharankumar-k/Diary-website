@@ -6,6 +6,11 @@
 }
 
 function errorHandler(error, req, res, next) {
+  console.error(`${req.method} ${req.originalUrl} - Error:`, error.name, error.message)
+  if (process.env.NODE_ENV !== 'production') {
+    console.error(error.stack)
+  }
+
   const statusCode =
     error.name === 'ValidationError'
       ? 400

@@ -1,13 +1,19 @@
 ﻿const cors = require('cors')
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose')
 const contactRoutes = require('./routes/contactRoutes')
+const authRoutes = require('./routes/authRoutes')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  credentials: true,
+}))
 app.use(express.json())
+app.use(cookieParser())
 
 app.get('/api/health', (req, res) => {
   console.log('Health check readyState:', mongoose.connection.readyState)
@@ -25,6 +31,7 @@ app.get('/api/health', (req, res) => {
 })
 
 app.use('/api/contact', contactRoutes)
+app.use('/api/auth', authRoutes)
 app.use(notFound)
 app.use(errorHandler)
 
